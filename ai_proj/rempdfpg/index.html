@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Pagekeep — Delete PDF pages privately</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Pagekeep home"><span class="brand-mark">p</span><span>pagekeep</span></a>
+    <div class="privacy-pill"><span class="lock">⌁</span> Runs locally in your browser</div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="eyebrow">PRIVATE PDF TOOL</div>
+      <h1>Keep the pages<br><em>that matter.</em></h1>
+      <p class="intro">Remove unwanted pages from a PDF in seconds. Your file stays on this device, and the download is always free.</p>
+      <div class="upload-card" id="dropzone">
+        <div class="upload-icon"><span>↑</span></div>
+        <h2>Drop your PDF here</h2>
+        <p>or choose a file from your device</p>
+        <label class="button primary" for="file-input">Choose PDF</label>
+        <input id="file-input" type="file" accept="application/pdf,.pdf" hidden>
+        <div class="upload-note"><span class="mini-lock">◈</span> Nothing is uploaded. Files stay on this device.</div>
+      </div>
+      <div class="trust-row"><span>✓ No account</span><span>✓ No watermark</span><span>✓ No file limits</span></div>
+    </section>
+
+    <section class="editor hidden" id="editor" aria-live="polite">
+      <div class="editor-head">
+        <div><div class="eyebrow">EDIT PDF</div><h2>Select pages to remove</h2><p id="file-meta">Your PDF is ready.</p></div>
+        <button class="button ghost" id="change-file">Choose another file</button>
+      </div>
+      <div class="toolbar">
+        <div class="selection-summary"><span class="selected-count" id="selected-count">0</span> pages selected <span class="divider">•</span> <span id="page-count">0 pages</span></div>
+        <div class="toolbar-actions"><button class="text-button" id="select-all">Select all</button><button class="text-button" id="clear-all">Clear selection</button></div>
+      </div>
+      <div class="page-grid" id="page-grid"></div>
+      <div class="download-bar">
+        <div class="download-copy"><span class="download-check">✓</span><div><strong>Ready when you are</strong><small>Pages you keep will remain in their original order.</small></div></div>
+        <button class="button primary download-button" id="download" disabled>Download edited PDF <span>↓</span></button>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+      <div class="eyebrow">HOW IT WORKS</div><h2>Simple by design.</h2>
+      <div class="steps"><div class="step"><span class="step-no">01</span><div class="step-icon">↑</div><h3>Choose your file</h3><p>Drop a PDF above or pick one from your device.</p></div><div class="step"><span class="step-no">02</span><div class="step-icon">▦</div><h3>Pick what goes</h3><p>Click the pages you no longer need. Selected pages are marked in blue.</p></div><div class="step"><span class="step-no">03</span><div class="step-icon">↓</div><h3>Download for free</h3><p>Get your cleaned-up PDF immediately. No sign-up or subscription.</p></div></div>
+    </section>
+  </main>
+  <footer><span>pagekeep</span><span>Local-first PDF tools · Your files never leave your device</span></footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="vendor/pdf-lib.min.js"></script>
+  <script src="vendor/pdf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

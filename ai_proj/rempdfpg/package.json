@@ -1,0 +1,13 @@
+{
+  "name": "pagekeep",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A private, local PDF page remover",
+  "scripts": {
+    "prepare": "node scripts/copy-vendors.cjs"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "3.11.174"
+  }
+}
